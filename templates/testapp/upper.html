@@ -1,0 +1,24 @@
+<!doctype html>
+{%load static%}
+{% load cust_filters %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>filter model data</h1>
+{%for record in records%}
+<ul>
+    <li>name: {{record.name|add:" pvt.ltd"}}</li>
+    <li>subject: {{record.subject| ffu}}</li>
+    <li>dept: {{record.dept|fnu:'2,7'}}</li>
+    <li>{{record.date|date:"F j,Y"}}</li>
+</ul>
+{%endfor%}
+</body>
+</html>
